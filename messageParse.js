@@ -51,9 +51,6 @@ module.exports = function() {
       // uint8_t     is_clockwise;
 
       else if (msgId == 0x27) { // ANKI_VEHICLE_MSG_V2C_LOCALIZATION_POSITION_UPDATE
-        //              0         1         2         3         4         5         6         7         8         9
-        //
-        // The jump kit and landing are Jump(43) and Landing(46).  For mapping purposes, they are set to 'Straight'
         var trackLocation = data.readUInt8(2);
         var trackId = data.readUInt8(3);
         var offset = data.readFloatLE(4);
