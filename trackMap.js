@@ -64,11 +64,17 @@ function updateTrackShape() {
 //24 - Two Curve - South -> West AND West -> North
 // I just don't deal with straight over curve...
 var addTrackToMap = function(trackId,clockwise) {
+
+  // The following IDs are considered as straights for mapping purposes:
+  //   43 = Jump piece (part of Launch Kit)
+  //   46 = Landing piece (part of Launch Kit)
+
   var trackTypes=["unknown","unknown","unknown","unknown","unknown","unknown","unknown","unknown","unknown","unknown", //  0- 9
                   "Crossover","Turn",   "unknown","unknown","unknown","unknown","unknown","Turn",   "Turn",   "unknown", // 10-19
                   "Turn",   "unknown","unknown","Turn",   "unknown","unknown","unknown","unknown","unknown","unknown", // 20-29
                   "unknown","unknown","unknown","Start",  "Finish", "unknown","Straight","unknown","unknown","Straight", // 30-39
                   "Straight","unknown","unknown","Straight","unknown","unknown","Straight","unknown","unknown","unknown"] // 40-49
+  
   var trackType = trackTypes[trackId];
   if (trackType == "Start") {
     if(startFound == true) { // We've already done the whole map.
