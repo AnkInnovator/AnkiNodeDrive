@@ -23,7 +23,7 @@ noble.on('stateChange', function(state) {
     setTimeout(function() {
        console.log("Stop scanning");
        noble.stopScanning();
-     }, 2000);shoc
+     }, 2000);
   } else {
     console.log("Stop scanning");
     noble.stopScanning();
